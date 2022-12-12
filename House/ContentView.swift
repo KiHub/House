@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var houseFetcher = HouseFetcher()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+
+        HouseListView(houses: houseFetcher.houses)
+        
+        
     }
 }
 
