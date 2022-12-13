@@ -35,6 +35,8 @@
 		0BFA103729477A0500608CC6 /* HouseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103629477A0500608CC6 /* HouseDetailView.swift */; };
 		0BFA103929477C5800608CC6 /* NoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103829477C5800608CC6 /* NoResultView.swift */; };
 		0BFA103B2947CEA200608CC6 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103A2947CEA200608CC6 /* ImageFetcher.swift */; };
+		0BFA103F29485FCE00608CC6 /* HouseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103E29485FCE00608CC6 /* HouseRow.swift */; };
+		0BFA10412948901800608CC6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10402948901800608CC6 /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		0BFA103629477A0500608CC6 /* HouseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailView.swift; sourceTree = "<group>"; };
 		0BFA103829477C5800608CC6 /* NoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultView.swift; sourceTree = "<group>"; };
 		0BFA103A2947CEA200608CC6 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		0BFA103E29485FCE00608CC6 /* HouseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRow.swift; sourceTree = "<group>"; };
+		0BFA10402948901800608CC6 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,9 +158,11 @@
 			isa = PBXGroup;
 			children = (
 				0BFA103229476E4100608CC6 /* HouseListView.swift */,
+				0BFA103E29485FCE00608CC6 /* HouseRow.swift */,
 				0BFA1034294779F400608CC6 /* HouseCardView.swift */,
 				0BFA103629477A0500608CC6 /* HouseDetailView.swift */,
 				0BFA103829477C5800608CC6 /* NoResultView.swift */,
+				0BFA10402948901800608CC6 /* TabBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				0BFA102A2947666F00608CC6 /* NetworkService.swift in Sources */,
 				0BFA103B2947CEA200608CC6 /* ImageFetcher.swift in Sources */,
 				0BFA0FF92947550700608CC6 /* ContentView.swift in Sources */,
+				0BFA10412948901800608CC6 /* TabBar.swift in Sources */,
+				0BFA103F29485FCE00608CC6 /* HouseRow.swift in Sources */,
 				0BFA1028294765CE00608CC6 /* NetworkError.swift in Sources */,
 				0BFA0FF72947550700608CC6 /* HouseApp.swift in Sources */,
 				0BFA1026294765A700608CC6 /* NetworkServiceProtocol.swift in Sources */,

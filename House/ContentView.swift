@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var houseFetcher = HouseFetcher()
+    
     var body: some View {
-
-        HouseListView(houses: houseFetcher.houses)
-        
+        TabBar()
         
     }
 }

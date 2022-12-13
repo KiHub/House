@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct HouseListView: View {
-  //  let image: Data
     let houses: [House]
     
     
@@ -29,19 +28,17 @@ struct HouseListView: View {
                         NavigationLink {
                             //
                         } label: {
-                            //    HouseCardView(house: house, imageFetcher: imageFetcher(house.image))
-                            VStack {
-                                Text(house.description)
-                                //   Divider()
-                                Text(house.image)
-                            }
+                            HouseRow(house: house)
+
                         }
+                        .listRowSeparator(.hidden)
                         
                     }
                 } else {
                     NoResultView()
                 }
             }
+            .background(Color("DarkGray"))
             .searchable(text: $searchText)
             .navigationTitle("DTT REAL ESTATE")
             .font(.custom("GothamSSm-Medium", size: 16))
@@ -49,8 +46,8 @@ struct HouseListView: View {
         }
     }
 }
-//struct HouseListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HouseListView(houses: [House.mockHouse])
-//    }
-//}
+struct HouseListView_Previews: PreviewProvider {
+    static var previews: some View {
+        HouseListView(houses: [House.mockHouse])
+    }
+}

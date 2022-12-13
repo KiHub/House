@@ -22,12 +22,12 @@ class HouseFetcher: ObservableObject {
         
         isLoading = true
         let service = NetworkService()
-        guard let url = URL(string: Constants.baseURL) else {return}
+        guard let url = URL(string: Constants.baseURL + Constants.apiURL) else {return}
         
         
         var request = URLRequest(url: url)
         
-               request.addValue("98bww4ezuzfePCYFxJEWyszbUXc7dxRx", forHTTPHeaderField: "Access-Key")
+        request.addValue(Constants.key, forHTTPHeaderField: "Access-Key")
         service.fetch([House].self, urlRequest: request) { [unowned self] result in
             DispatchQueue.main.async {
                 self.isLoading = false
