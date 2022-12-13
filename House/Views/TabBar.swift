@@ -23,7 +23,7 @@ struct TabBar: View {
                  .onAppear{self.tabHomeImage = "home"}
                  .onDisappear{self.tabHomeImage = "home-2"}
 
-             NoResultView().tabItem({
+             AboutView().tabItem({
                  Image(tabInfoImage)
              }).tag("info")
                  .onAppear{self.tabInfoImage = "info-button"}

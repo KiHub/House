@@ -10,8 +10,8 @@ import SwiftUI
 
 
 class HouseFetcher: ObservableObject {
+   
     @Published var houses = [House]()
-   // @Published var image = Data()
     @Published var isLoading: Bool = false
     @Published var errorMessage: String? = nil
     init() {
@@ -19,12 +19,9 @@ class HouseFetcher: ObservableObject {
     }
     
     func fetchAllHouses() {
-        
         isLoading = true
         let service = NetworkService()
         guard let url = URL(string: Constants.baseURL + Constants.apiURL) else {return}
-        
-        
         var request = URLRequest(url: url)
         
         request.addValue(Constants.key, forHTTPHeaderField: "Access-Key")

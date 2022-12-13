@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HouseRow: View {
+
     let house: House
     let imageSize: CGFloat = 100
     let scale: CGFloat = 1

@@ -24,9 +24,10 @@ struct HouseListView: View {
         NavigationView {
             List {
                 if filtredHouses.count != 0 {
+                    
                     ForEach(filtredHouses) { house in
                         NavigationLink {
-                            //
+                            HouseDetailView(house: house)
                         } label: {
                             HouseRow(house: house)
 

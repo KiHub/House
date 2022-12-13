@@ -34,9 +34,11 @@
 		0BFA1035294779F400608CC6 /* HouseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA1034294779F400608CC6 /* HouseCardView.swift */; };
 		0BFA103729477A0500608CC6 /* HouseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103629477A0500608CC6 /* HouseDetailView.swift */; };
 		0BFA103929477C5800608CC6 /* NoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103829477C5800608CC6 /* NoResultView.swift */; };
-		0BFA103B2947CEA200608CC6 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103A2947CEA200608CC6 /* ImageFetcher.swift */; };
 		0BFA103F29485FCE00608CC6 /* HouseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103E29485FCE00608CC6 /* HouseRow.swift */; };
 		0BFA10412948901800608CC6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10402948901800608CC6 /* TabBar.swift */; };
+		0BFA10432948ADA900608CC6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10422948ADA900608CC6 /* MapView.swift */; };
+		0BFA10452948FD3F00608CC6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10442948FD3F00608CC6 /* AboutView.swift */; };
+		0BFA1047294928E100608CC6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA1046294928E100608CC6 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +71,11 @@
 		0BFA1034294779F400608CC6 /* HouseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCardView.swift; sourceTree = "<group>"; };
 		0BFA103629477A0500608CC6 /* HouseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailView.swift; sourceTree = "<group>"; };
 		0BFA103829477C5800608CC6 /* NoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultView.swift; sourceTree = "<group>"; };
-		0BFA103A2947CEA200608CC6 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
 		0BFA103E29485FCE00608CC6 /* HouseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRow.swift; sourceTree = "<group>"; };
 		0BFA10402948901800608CC6 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		0BFA10422948ADA900608CC6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		0BFA10442948FD3F00608CC6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		0BFA1046294928E100608CC6 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +166,9 @@
 				0BFA1034294779F400608CC6 /* HouseCardView.swift */,
 				0BFA103629477A0500608CC6 /* HouseDetailView.swift */,
 				0BFA103829477C5800608CC6 /* NoResultView.swift */,
+				0BFA10442948FD3F00608CC6 /* AboutView.swift */,
 				0BFA10402948901800608CC6 /* TabBar.swift */,
+				0BFA10422948ADA900608CC6 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,8 +178,8 @@
 			children = (
 				0BFA1025294765A700608CC6 /* NetworkServiceProtocol.swift */,
 				0BFA10292947666F00608CC6 /* NetworkService.swift */,
+				0BFA1046294928E100608CC6 /* LocationService.swift */,
 				0BFA102B294766D900608CC6 /* HouseFetcher.swift */,
-				0BFA103A2947CEA200608CC6 /* ImageFetcher.swift */,
 				0BFA1027294765CE00608CC6 /* NetworkError.swift */,
 			);
 			path = ViewModel;
@@ -271,13 +277,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BFA102E2947675000608CC6 /* House.swift in Sources */,
+				0BFA10432948ADA900608CC6 /* MapView.swift in Sources */,
+				0BFA10452948FD3F00608CC6 /* AboutView.swift in Sources */,
 				0BFA103329476E4100608CC6 /* HouseListView.swift in Sources */,
 				0BFA103729477A0500608CC6 /* HouseDetailView.swift in Sources */,
 				0BFA102C294766D900608CC6 /* HouseFetcher.swift in Sources */,
 				0BFA103929477C5800608CC6 /* NoResultView.swift in Sources */,
 				0BFA1035294779F400608CC6 /* HouseCardView.swift in Sources */,
+				0BFA1047294928E100608CC6 /* LocationService.swift in Sources */,
 				0BFA102A2947666F00608CC6 /* NetworkService.swift in Sources */,
-				0BFA103B2947CEA200608CC6 /* ImageFetcher.swift in Sources */,
 				0BFA0FF92947550700608CC6 /* ContentView.swift in Sources */,
 				0BFA10412948901800608CC6 /* TabBar.swift in Sources */,
 				0BFA103F29485FCE00608CC6 /* HouseRow.swift in Sources */,
