@@ -31,14 +31,14 @@
 		0BFA102E2947675000608CC6 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA102D2947675000608CC6 /* House.swift */; };
 		0BFA1031294769E300608CC6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA1030294769E300608CC6 /* Constants.swift */; };
 		0BFA103329476E4100608CC6 /* HouseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103229476E4100608CC6 /* HouseListView.swift */; };
-		0BFA1035294779F400608CC6 /* HouseCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA1034294779F400608CC6 /* HouseCardView.swift */; };
 		0BFA103729477A0500608CC6 /* HouseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103629477A0500608CC6 /* HouseDetailView.swift */; };
 		0BFA103929477C5800608CC6 /* NoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103829477C5800608CC6 /* NoResultView.swift */; };
 		0BFA103F29485FCE00608CC6 /* HouseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103E29485FCE00608CC6 /* HouseRow.swift */; };
 		0BFA10412948901800608CC6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10402948901800608CC6 /* TabBar.swift */; };
 		0BFA10432948ADA900608CC6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10422948ADA900608CC6 /* MapView.swift */; };
 		0BFA10452948FD3F00608CC6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10442948FD3F00608CC6 /* AboutView.swift */; };
-		0BFA1047294928E100608CC6 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA1046294928E100608CC6 /* LocationService.swift */; };
+		0BFA10492949D80700608CC6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10482949D80700608CC6 /* LocationManager.swift */; };
+		0BFA104B2949DF8E00608CC6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA104A2949DF8E00608CC6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,14 +68,14 @@
 		0BFA102D2947675000608CC6 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		0BFA1030294769E300608CC6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0BFA103229476E4100608CC6 /* HouseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListView.swift; sourceTree = "<group>"; };
-		0BFA1034294779F400608CC6 /* HouseCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseCardView.swift; sourceTree = "<group>"; };
 		0BFA103629477A0500608CC6 /* HouseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailView.swift; sourceTree = "<group>"; };
 		0BFA103829477C5800608CC6 /* NoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultView.swift; sourceTree = "<group>"; };
 		0BFA103E29485FCE00608CC6 /* HouseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRow.swift; sourceTree = "<group>"; };
 		0BFA10402948901800608CC6 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		0BFA10422948ADA900608CC6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		0BFA10442948FD3F00608CC6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		0BFA1046294928E100608CC6 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0BFA10482949D80700608CC6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		0BFA104A2949DF8E00608CC6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +163,6 @@
 			children = (
 				0BFA103229476E4100608CC6 /* HouseListView.swift */,
 				0BFA103E29485FCE00608CC6 /* HouseRow.swift */,
-				0BFA1034294779F400608CC6 /* HouseCardView.swift */,
 				0BFA103629477A0500608CC6 /* HouseDetailView.swift */,
 				0BFA103829477C5800608CC6 /* NoResultView.swift */,
 				0BFA10442948FD3F00608CC6 /* AboutView.swift */,
@@ -178,7 +177,6 @@
 			children = (
 				0BFA1025294765A700608CC6 /* NetworkServiceProtocol.swift */,
 				0BFA10292947666F00608CC6 /* NetworkService.swift */,
-				0BFA1046294928E100608CC6 /* LocationService.swift */,
 				0BFA102B294766D900608CC6 /* HouseFetcher.swift */,
 				0BFA1027294765CE00608CC6 /* NetworkError.swift */,
 			);
@@ -189,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				0BFA1030294769E300608CC6 /* Constants.swift */,
+				0BFA10482949D80700608CC6 /* LocationManager.swift */,
+				0BFA104A2949DF8E00608CC6 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -283,8 +283,8 @@
 				0BFA103729477A0500608CC6 /* HouseDetailView.swift in Sources */,
 				0BFA102C294766D900608CC6 /* HouseFetcher.swift in Sources */,
 				0BFA103929477C5800608CC6 /* NoResultView.swift in Sources */,
-				0BFA1035294779F400608CC6 /* HouseCardView.swift in Sources */,
-				0BFA1047294928E100608CC6 /* LocationService.swift in Sources */,
+				0BFA104B2949DF8E00608CC6 /* Extensions.swift in Sources */,
+				0BFA10492949D80700608CC6 /* LocationManager.swift in Sources */,
 				0BFA102A2947666F00608CC6 /* NetworkService.swift in Sources */,
 				0BFA0FF92947550700608CC6 /* ContentView.swift in Sources */,
 				0BFA10412948901800608CC6 /* TabBar.swift in Sources */,
@@ -425,6 +425,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = House/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need to know your location to show the distance to your future new home";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -456,6 +457,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = House/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Need to know your location to show the distance to your future new home";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

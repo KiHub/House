@@ -6,12 +6,23 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct HouseRow: View {
-
+    
+    
+    
+    @StateObject var locationManager = LocationManager()
+    
+  //  let distanceInMeters = coordinate₀.distance(from: coordinate₁)
+    
     let house: House
     let imageSize: CGFloat = 100
     let scale: CGFloat = 1
+    
+//    let coordinateUser = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
+//    let coordinateHouse = CLLocation(latitude: house.latitude, longitude: house.longitude)
+    
     var body: some View {
         HStack(alignment: .top, spacing: 20) {
             
@@ -55,13 +66,13 @@ struct HouseRow: View {
                 VStack(alignment: .leading) {
                     Text("$\(house.price)")
                         .font(.custom("GothamSSm-Medium", size: 16))
-                    Text("\(house.zip)\(house.city)")
+                    Text("\(house.zip) \(house.city)")
                         .font(.custom("GothamSSm-Light", size: 12))
                         .foregroundColor(Color("Medium"))
                 }
                Spacer()
                
-                    HStack(alignment: .bottom) {
+                    HStack(alignment: .top) {
                         HStack{
                         Image("bed-2")
                         Text("\(house.bedrooms)")
@@ -82,7 +93,9 @@ struct HouseRow: View {
                             .foregroundColor(Color("Medium"))
                         Spacer()
                         Image("pin")
-                    Text("123")
+                            let coordinateUser = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
+                            let coordinateHouse = CLLocation(latitude: house.latitude, longitude: house.longitude)
+                            Text("\(coordinateUser.distance(from: coordinateHouse).formatted(.number.precision(.fractionLength(0))))")
                             .font(.custom("GothamSSm-Light", size: 10))
                             .foregroundColor(Color("Medium"))
                         Spacer()

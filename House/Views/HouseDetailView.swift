@@ -144,6 +144,7 @@ extension HouseDetailView {
             dismiss()
         } label: {
             Image("left-arrow-2")
+                
         }
         .padding(20)
     }
