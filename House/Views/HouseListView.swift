@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HouseListView: View {
     let houses: [House]
-
+    
     @StateObject var locationManager = LocationManager()
     @State private var searchText: String = ""
     var filtredHouses: [House] {
@@ -25,50 +25,41 @@ struct HouseListView: View {
     
     var body: some View {
         NavigationView {
-                List {
-                    if filtredHouses.count != 0 {
-                        
-                        ForEach(filtredHouses) { house in
-                            NavigationLink {
-                                HouseDetailView(house: house)
-                            } label: {
-                                HouseRow(house: house)
-
-                            }
-                            .listRowSeparator(.hidden)
+            List {
+                if filtredHouses.count != 0 {
+                    
+                    ForEach(filtredHouses) { house in
+                        NavigationLink {
+                            HouseDetailView(house: house)
+                            
+                        } label: {
+                            HouseRow(house: house)
                             
                         }
-                    } else {
-                        NoResultView()
+                        .listRowSeparator(.hidden)
+                        
                     }
+                } else {
+                    NoResultView()
                 }
-//                .toolbar {
-//                    ToolbarItem(placement: .navigationBarTrailing) {
-//                        Button {
-//
-//                           // let locationManager = CLLocationManager()
-//                              //  locationManager.requestAlwaysAuthorization()
-//                          //  locationManager.requestAuthorisation()
-//
-//                          //  locationManager.requestLocation()
-//    //                        if let location = locationManager.location {
-//    //                                       print("Your location: \(location.latitude), \(location.longitude)")
-//    //                                   }
-//                            print("Pressed")
-//                        } label: {
-//                            Image("pin")
-//                                .scaleEffect(2)
-//                        }
-//                            }
-//                        }
-                .background(Color("DarkGray"))
-                .searchable(text: $searchText)
-                .navigationTitle("DTT REAL ESTATE")
-                .font(.custom("GothamSSm-Medium", size: 16))
+            }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button {
+//                        print("Stop")
+//                        locationManager.stopUpdate()
+//                    } label: {
+//                        Image(systemName: "location.slash")
+//                            .scaleEffect(1)
+//                    }
+//                }
+//            }
+            .background(Color("DarkGray"))
+            .searchable(text: $searchText)
+            .navigationTitle("DTT REAL ESTATE")
+            .font(.custom("GothamSSm-Medium", size: 16))
             .foregroundColor(Color("Strong"))
-          //  }
         }
-        
     }
 }
 struct HouseListView_Previews: PreviewProvider {

@@ -11,17 +11,10 @@ import CoreLocation
 struct HouseRow: View {
     
     
-    
     @StateObject var locationManager = LocationManager()
-    
-  //  let distanceInMeters = coordinate₀.distance(from: coordinate₁)
-    
     let house: House
     let imageSize: CGFloat = 100
     let scale: CGFloat = 1
-    
-//    let coordinateUser = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
-//    let coordinateHouse = CLLocation(latitude: house.latitude, longitude: house.longitude)
     
     var body: some View {
         HStack(alignment: .top, spacing: 20) {
@@ -68,40 +61,51 @@ struct HouseRow: View {
                         .font(.custom("GothamSSm-Medium", size: 16))
                     Text("\(house.zip) \(house.city)")
                         .font(.custom("GothamSSm-Light", size: 12))
+                    
                         .foregroundColor(Color("Medium"))
                 }
-               Spacer()
-               
-                    HStack(alignment: .top) {
-                        HStack{
+                Spacer()
+                HStack(alignment: .bottom) {
+                    HStack{
                         Image("bed-2")
                         Text("\(house.bedrooms)")
                             .font(.custom("GothamSSm-Light", size: 10))
+                            .minimumScaleFactor(0.4)
                             .foregroundColor(Color("Medium"))
-                        Spacer()
+                    }
+                    Spacer()
+                    HStack {
                         Image("shower")
                         Text("\(house.bathrooms)")
                             .font(.custom("GothamSSm-Light", size: 10))
+                            .minimumScaleFactor(0.4)
                             .foregroundColor(Color("Medium"))
-                        Spacer()
-                        }
-                        
-                        HStack {
+                    }
+                    Spacer()
+                    
+                    HStack {
                         Image("square-measument")
                         Text("\(house.size)")
                             .font(.custom("GothamSSm-Light", size: 10))
+                            .minimumScaleFactor(0.4)
                             .foregroundColor(Color("Medium"))
-                        Spacer()
-                        Image("pin")
-                            let coordinateUser = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
-                            let coordinateHouse = CLLocation(latitude: house.latitude, longitude: house.longitude)
-                            Text("\(coordinateUser.distance(from: coordinateHouse).formatted(.number.precision(.fractionLength(0))))")
-                            .font(.custom("GothamSSm-Light", size: 10))
-                            .foregroundColor(Color("Medium"))
-                        Spacer()
-                        }
                     }
-                    .padding(.vertical)
+                    Spacer()
+                    HStack {
+                        Image("pin")
+                        let coordinateUser = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
+                        let coordinateHouse = CLLocation(latitude: house.latitude, longitude: house.longitude)
+                        let distance = (coordinateUser.distance (from: coordinateHouse))
+                        let formatted = String(format: "%.0f", distance / 1000)
+                             Text(formatted + "km")
+                            .font(.custom("GothamSSm-Light", size: 10))
+                            .minimumScaleFactor(0.4)
+                            .lineLimit(2)
+                            .foregroundColor(Color("Medium"))
+                    }
+                    Spacer()
+                }
+                .padding(.vertical)
             }
         }
     }
