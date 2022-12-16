@@ -1,21 +1,21 @@
 //
-//  HouseDetailView.swift
+//  HouseDetailViewCD.swift
 //  House
 //
-//  Created by  Mr.Ki on 12.12.2022.
+//  Created by  Mr.Ki on 16.12.2022.
 //
 
 import SwiftUI
 import MapKit
 
-struct HouseDetailView: View {
+struct HouseDetailViewCD: View {
     
     
     @Environment (\.managedObjectContext) var managedObjectContext
     @StateObject var locationManager = LocationManager()
     @Environment(\.presentationMode) var presentatiomMode
     @Environment(\.dismiss) var dismiss
-    let house: House
+    let house: FetchedResults<Item>.Element
     let imageSize: CGFloat = 150
     let scale: CGFloat = 1
     
@@ -58,19 +58,15 @@ struct HouseDetailView: View {
             .overlay(alignment: .topLeading) {
                 backButton
             }
-            //MARK: - save button
-            .overlay(alignment: .topTrailing) {
-                saveButton
-            }
         }
     }
 }
 //MARK: - Extension
-extension HouseDetailView {
+extension HouseDetailViewCD {
     //MARK: - Image
     private var imageSection: some View {
         VStack {
-            if let url =  Constants.baseURL + house.image {
+            if let url =  house.image {
                 AsyncImage(url: URL(string: url)) { phase in
                     if let image = phase.image {
                         image.resizable()
@@ -80,7 +76,7 @@ extension HouseDetailView {
                         
                     } else if phase.error != nil {
                         ZStack {
-                            // if something going wrong with image
+                         //    if something going wrong with image
                             Color("Light").frame(width: imageSize, height: imageSize)
                                 .clipShape(RoundedRectangle(cornerRadius: 25.0))
                                 .scaleEffect(scale)
@@ -120,6 +116,7 @@ extension HouseDetailView {
             HStack {
                 Text("$\(house.price)")
                     .font(.custom("GothamSSm-Bold", size: 18))
+                 //   .foregroundColor(Color("Strong"))
                 Spacer()
                 HStack(alignment: .bottom) {
                     HStack {
@@ -163,14 +160,18 @@ extension HouseDetailView {
     }
     private var descriptionSection: some View {
         //MARK: - Description
-        Text(house.description)
+        Text(house.description1 ?? "")
             .font(.custom("GothamSSm-Light", size: 12))
             .foregroundColor(Color("Medium"))
     }
     
     private var mapView: some View {
         //MARK: - Map
-        MiniMap(house: house)
+        Map(coordinateRegion: .constant(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: house.latitude, longitude:  house.longitude), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))), annotationItems: [house]) { house in
+            MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: house.latitude, longitude:  house.longitude)) {
+                Image("point")
+            }
+        }
         .cornerRadius(20)
         .frame(height: 200)
     }
@@ -184,21 +185,6 @@ extension HouseDetailView {
         .padding(20)
     }
     
-    private var saveButton: some View {
-        Button {
-            //MARK: - Save to CD
-            DataManager().addHouse(id: Int64(house.id), image: (Constants.baseURL + house.image), price: Int64(house.price), bedrooms: Int64(house.bedrooms), bathrooms: Int64(house.bathrooms), size: Int64(house.size), description: house.description, zip: house.zip, city: house.city, latitude: house.latitude, longitude: house.longitude, createdDate: house.createdDate, context: managedObjectContext)
-        } label: {
-            Image("heart2")
-        }
-        .padding(20)
-    }
-    
 }
 
 
-struct HouseDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        HouseDetailView(house: House.mockHouse)
-    }
-}

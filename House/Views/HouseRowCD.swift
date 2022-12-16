@@ -1,18 +1,18 @@
 //
-//  HouseRow.swift
+//  HouseRowCD.swift
 //  House
 //
-//  Created by  Mr.Ki on 13.12.2022.
+//  Created by  Mr.Ki on 16.12.2022.
 //
 
 import SwiftUI
 import CoreLocation
 
-struct HouseRow: View {
+struct HouseRowCD: View {
     
     
     @StateObject var locationManager = LocationManager()
-    let house: House
+    let house: FetchedResults<Item>.Element
     let imageSize: CGFloat = 100
     let scale: CGFloat = 1
     
@@ -26,9 +26,8 @@ struct HouseRow: View {
                     Text("$\(house.price)")
                         .font(.custom("GothamSSm-Medium", size: 16))
                         .foregroundColor(Color("Strong"))
-                    Text("\(house.zip) \(house.city)")
+                    Text((house.zip ?? "") + (house.city ?? ""))
                         .font(.custom("GothamSSm-Light", size: 12))
-
                         .foregroundColor(Color("Medium"))
                 }
                 Spacer()
@@ -79,11 +78,11 @@ struct HouseRow: View {
     }
 }
 
-extension HouseRow {
+extension HouseRowCD {
     private var imageSection: some View {
         
         VStack {
-        if let url =  Constants.baseURL + house.image {
+        if let url =  house.image {
             AsyncImage(url: URL(string: url)) { phase in
                 if let image = phase.image {
                     image.resizable()
@@ -120,11 +119,5 @@ extension HouseRow {
         }
     }
     }
-    
 }
 
-struct HouseRow_Previews: PreviewProvider {
-    static var previews: some View {
-        HouseRow(house: House.mockHouse)
-    }
-}

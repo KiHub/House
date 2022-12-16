@@ -27,7 +27,7 @@ struct TabBar: View {
                  .onAppear{self.tabHomeImage = "home"}
                  .onDisappear{self.tabHomeImage = "home-2"}
             
-           NoResultView().tabItem({
+           SavedHouseListView().tabItem({
                  Image(tabSaveImage)
              }).tag("save")
                  .onAppear{self.tabSaveImage = "heart1"}

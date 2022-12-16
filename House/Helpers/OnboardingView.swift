@@ -13,16 +13,16 @@ struct OnboardingView: View {
     @State private var isAnimating: Bool = false
     var body: some View {
         ZStack {
-            VStack {
+            VStack(spacing: 30) {
                 Image(data.objectImage)
                     .resizable()
                     .scaledToFit()
-                    .scaleEffect(isAnimating ? 0.3 : 0.1)
+                    .scaleEffect(isAnimating ? 0.6 : 0.1)
             Text(data.primaryText)
                 .font(.custom("GothamSSm-Medium", size: 16))
                 .foregroundColor(Color("Strong"))
                 .padding()
-   
+   Spacer()
             }
             Spacer()
             VStack {
