@@ -9,10 +9,12 @@ import SwiftUI
 
 
 struct HouseListView: View {
-    let houses: [House]
     
+    
+    let houses: [House]
     @StateObject var locationManager = LocationManager()
     @State private var searchText: String = ""
+    //MARK: - Search bar
     var filtredHouses: [House] {
         if searchText.count < 2 {
             return houses.sorted {
@@ -26,20 +28,18 @@ struct HouseListView: View {
     var body: some View {
         NavigationView {
             List {
+                //MARK: - Fill list
                 if filtredHouses.count != 0 {
-                    
                     ForEach(filtredHouses) { house in
                         NavigationLink {
                             HouseDetailView(house: house)
-                            
                         } label: {
                             HouseRow(house: house)
-                            
                         }
                         .listRowSeparator(.hidden)
-                        
                     }
                 } else {
+                    //MARK: - No result in search
                     NoResultView()
                 }
             }

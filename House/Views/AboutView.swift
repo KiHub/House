@@ -9,12 +9,13 @@ import SwiftUI
 
 struct AboutView: View {
     var body: some View {
+        //MARK: - All about app
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: 20) {
             Text("About")
                         .font(.custom("GothamSSm-Bold", size: 18))
                         .foregroundColor(Color("Strong"))
-                
+                        // some information
                 Text("DTT is not your average software development company because besides technical knowledge we also have a solid marketing background. With passion, we work on a perfect mix of technology, strategy, and creativity. DTT was established in 2010, and in a short period we have made significant steps forward; a substantial portfolio, excellent credentials, respectable clients, and most importantly a competent and driven team.")
                     .font(.custom("GothamSSm-Book", size: 12))
                     .foregroundColor(Color("Medium"))

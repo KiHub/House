@@ -17,13 +17,12 @@ class HouseFetcher: ObservableObject {
     init() {
         fetchAllHouses()
     }
-    
+    //MARK: - Get all data
     func fetchAllHouses() {
         isLoading = true
         let service = NetworkService()
         guard let url = URL(string: Constants.baseURL + Constants.apiURL) else {return}
         var request = URLRequest(url: url)
-        
         request.addValue(Constants.key, forHTTPHeaderField: "Access-Key")
         service.fetch([House].self, urlRequest: request) { [unowned self] result in
             DispatchQueue.main.async {
@@ -34,7 +33,6 @@ class HouseFetcher: ObservableObject {
                     print(error.description)
                     print(error)
                 case .success(let houses):
-            
                     self.houses = houses
                 }
             }

@@ -9,16 +9,15 @@ import SwiftUI
 
 struct NoResultView: View {
     var body: some View {
+        //MARK: - If no results found
         VStack {
             Image("undraw_empty_xct9-2")
                 .resizable()
                 .scaledToFit()
-               
                 .background(Color.clear)
                 .padding()
                 .padding()
         Text("No results found")
-            
             Text("Perhaps try another search?")
         }
         .font(.custom("GothamSSm-Light", size: 16))

@@ -10,7 +10,8 @@ import CoreLocation
 import Combine
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-
+    
+   //MARK: - User location
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
     @Published var lastLocation: CLLocation?
@@ -20,10 +21,12 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
+        // Start update location
         locationManager.startUpdatingLocation()
     }
     
     func stopUpdate() {
+        //MARK: - Check
         locationManager.delegate = nil
         locationManager.stopUpdatingLocation()
     }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6D67FF294BC8C600A31D52 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D67FE294BC8C600A31D52 /* Map.swift */; };
+		0B6D6801294BD80200A31D52 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D6800294BD80200A31D52 /* Global.swift */; };
+		0B6D6803294BD89900A31D52 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D6802294BD89900A31D52 /* OnboardingData.swift */; };
+		0B6D6805294BD9C300A31D52 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D6804294BD9C300A31D52 /* OnboardingManager.swift */; };
+		0B6D6807294BD9F000A31D52 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D6806294BD9F000A31D52 /* OnboardingView.swift */; };
+		0B6D680A294C526900A31D52 /* Fav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D6808294C526900A31D52 /* Fav.xcdatamodeld */; };
 		0BFA0FF72947550700608CC6 /* HouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA0FF62947550700608CC6 /* HouseApp.swift */; };
 		0BFA0FF92947550700608CC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA0FF82947550700608CC6 /* ContentView.swift */; };
 		0BFA0FFB2947550800608CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA0FFA2947550800608CC6 /* Assets.xcassets */; };
@@ -35,13 +41,17 @@
 		0BFA103929477C5800608CC6 /* NoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103829477C5800608CC6 /* NoResultView.swift */; };
 		0BFA103F29485FCE00608CC6 /* HouseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA103E29485FCE00608CC6 /* HouseRow.swift */; };
 		0BFA10412948901800608CC6 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10402948901800608CC6 /* TabBar.swift */; };
-		0BFA10432948ADA900608CC6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10422948ADA900608CC6 /* MapView.swift */; };
 		0BFA10452948FD3F00608CC6 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10442948FD3F00608CC6 /* AboutView.swift */; };
 		0BFA10492949D80700608CC6 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA10482949D80700608CC6 /* LocationManager.swift */; };
-		0BFA104B2949DF8E00608CC6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA104A2949DF8E00608CC6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B6D67FE294BC8C600A31D52 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		0B6D6800294BD80200A31D52 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		0B6D6802294BD89900A31D52 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
+		0B6D6804294BD9C300A31D52 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
+		0B6D6806294BD9F000A31D52 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0B6D6809294C526900A31D52 /* Fav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fav.xcdatamodel; sourceTree = "<group>"; };
 		0BFA0FF32947550700608CC6 /* House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = House.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BFA0FF62947550700608CC6 /* HouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseApp.swift; sourceTree = "<group>"; };
 		0BFA0FF82947550700608CC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,10 +82,8 @@
 		0BFA103829477C5800608CC6 /* NoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoResultView.swift; sourceTree = "<group>"; };
 		0BFA103E29485FCE00608CC6 /* HouseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRow.swift; sourceTree = "<group>"; };
 		0BFA10402948901800608CC6 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
-		0BFA10422948ADA900608CC6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		0BFA10442948FD3F00608CC6 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		0BFA10482949D80700608CC6 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		0BFA104A2949DF8E00608CC6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +175,7 @@
 				0BFA103829477C5800608CC6 /* NoResultView.swift */,
 				0BFA10442948FD3F00608CC6 /* AboutView.swift */,
 				0BFA10402948901800608CC6 /* TabBar.swift */,
-				0BFA10422948ADA900608CC6 /* MapView.swift */,
+				0B6D67FE294BC8C600A31D52 /* Map.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,7 +186,6 @@
 				0BFA1025294765A700608CC6 /* NetworkServiceProtocol.swift */,
 				0BFA10292947666F00608CC6 /* NetworkService.swift */,
 				0BFA102B294766D900608CC6 /* HouseFetcher.swift */,
-				0BFA1027294765CE00608CC6 /* NetworkError.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,9 +193,14 @@
 		0BFA102F294769AC00608CC6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0BFA1027294765CE00608CC6 /* NetworkError.swift */,
+				0B6D6808294C526900A31D52 /* Fav.xcdatamodeld */,
+				0B6D6800294BD80200A31D52 /* Global.swift */,
 				0BFA1030294769E300608CC6 /* Constants.swift */,
 				0BFA10482949D80700608CC6 /* LocationManager.swift */,
-				0BFA104A2949DF8E00608CC6 /* Extensions.swift */,
+				0B6D6802294BD89900A31D52 /* OnboardingData.swift */,
+				0B6D6804294BD9C300A31D52 /* OnboardingManager.swift */,
+				0B6D6806294BD9F000A31D52 /* OnboardingView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -277,22 +289,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BFA102E2947675000608CC6 /* House.swift in Sources */,
-				0BFA10432948ADA900608CC6 /* MapView.swift in Sources */,
 				0BFA10452948FD3F00608CC6 /* AboutView.swift in Sources */,
 				0BFA103329476E4100608CC6 /* HouseListView.swift in Sources */,
 				0BFA103729477A0500608CC6 /* HouseDetailView.swift in Sources */,
 				0BFA102C294766D900608CC6 /* HouseFetcher.swift in Sources */,
+				0B6D6805294BD9C300A31D52 /* OnboardingManager.swift in Sources */,
 				0BFA103929477C5800608CC6 /* NoResultView.swift in Sources */,
-				0BFA104B2949DF8E00608CC6 /* Extensions.swift in Sources */,
+				0B6D680A294C526900A31D52 /* Fav.xcdatamodeld in Sources */,
 				0BFA10492949D80700608CC6 /* LocationManager.swift in Sources */,
 				0BFA102A2947666F00608CC6 /* NetworkService.swift in Sources */,
 				0BFA0FF92947550700608CC6 /* ContentView.swift in Sources */,
 				0BFA10412948901800608CC6 /* TabBar.swift in Sources */,
 				0BFA103F29485FCE00608CC6 /* HouseRow.swift in Sources */,
 				0BFA1028294765CE00608CC6 /* NetworkError.swift in Sources */,
+				0B6D6807294BD9F000A31D52 /* OnboardingView.swift in Sources */,
+				0B6D6803294BD89900A31D52 /* OnboardingData.swift in Sources */,
 				0BFA0FF72947550700608CC6 /* HouseApp.swift in Sources */,
 				0BFA1026294765A700608CC6 /* NetworkServiceProtocol.swift in Sources */,
+				0B6D67FF294BC8C600A31D52 /* Map.swift in Sources */,
 				0BFA1031294769E300608CC6 /* Constants.swift in Sources */,
+				0B6D6801294BD80200A31D52 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +515,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0B6D6808294C526900A31D52 /* Fav.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0B6D6809294C526900A31D52 /* Fav.xcdatamodel */,
+			);
+			currentVersion = 0B6D6809294C526900A31D52 /* Fav.xcdatamodel */;
+			path = Fav.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0BFA0FEB2947550700608CC6 /* Project object */;
 }

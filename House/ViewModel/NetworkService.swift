@@ -8,7 +8,7 @@
 import Foundation
 
 struct NetworkService: NetworkServiceProtocol {
-    
+    //MARK: - Universal network service
     func fetch<T: Decodable>(_ type: T.Type, urlRequest: URLRequest, completion: @escaping(Result<T, NetworkError>) -> Void) {
         
         let task = URLSession.shared.dataTask(with: urlRequest) {data, responce, error in
