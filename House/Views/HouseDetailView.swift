@@ -20,39 +20,43 @@ struct HouseDetailView: View {
     let scale: CGFloat = 1
     
     var body: some View {
-    //MARK: - Datail layout
+        //MARK: - Datail layout
         ZStack(alignment: .topLeading) {
             VStack {
                 ScrollView {
-                    imageSection
-                        .ignoresSafeArea()
-                    VStack(alignment: .leading, spacing: 20) {
-                        titleSection
-                        Text("Description")
-                            .font(.custom("GothamSSm-Medium", size: 16))
-                        descriptionSection
-                        Text("Location")
-                            .font(.custom("GothamSSm-Medium", size: 16))
-                        mapView
-                        //MARK: - Navigation
-                            .onTapGesture {
-                                let latitude = house.latitude
-                                let longitude = house.longitude
-                                let url = URL(string: "maps://?saddr=&daddr=\(latitude),\(longitude)")
-                                // pass data and open navigation app
-                                if let safeUrl = url {
-                                    if UIApplication.shared.canOpenURL(safeUrl) {
-                                        UIApplication.shared.open(safeUrl, options: [:], completionHandler: nil)
+                    VStack(spacing: -30) {
+                        imageSection
+                            .ignoresSafeArea()
+                        VStack(alignment: .leading, spacing: 20) {
+                            titleSection
+                            Text("Description")
+                                .font(.custom("GothamSSm-Medium", size: 16))
+                            descriptionSection
+                            Text("Location")
+                                .font(.custom("GothamSSm-Medium", size: 16))
+                            mapView
+                            //MARK: - Navigation
+                                .onTapGesture {
+                                    let latitude = house.latitude
+                                    let longitude = house.longitude
+                                    let url = URL(string: "maps://?saddr=&daddr=\(latitude),\(longitude)")
+                                    // pass data and open navigation app
+                                    if let safeUrl = url {
+                                        if UIApplication.shared.canOpenURL(safeUrl) {
+                                            UIApplication.shared.open(safeUrl, options: [:], completionHandler: nil)
+                                        }
                                     }
                                 }
-                            }
+                        }
+                        .padding()
+                        .background(Color("LightGray"))
+                        .cornerRadius(20)
                     }
-                    .padding()
                 }
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
                 .ignoresSafeArea()
-                .background(Color("DarkGray"))
+                .background(Color("LightGray"))
             }
             //MARK: - Back button
             .overlay(alignment: .topLeading) {
@@ -63,6 +67,13 @@ struct HouseDetailView: View {
                 saveButton
             }
         }
+        .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local)
+            .onEnded({ value in
+                
+                if value.translation.width > 0 {
+                    dismiss()
+                }
+            }))
     }
 }
 //MARK: - Extension
@@ -117,49 +128,49 @@ extension HouseDetailView {
     
     private var titleSection: some View {
         //MARK: - Title
-            HStack {
-                Text("$\(house.price)")
-                    .font(.custom("GothamSSm-Bold", size: 18))
-                Spacer()
-                HStack(alignment: .bottom) {
-                    HStack {
-                        Image("bed-2")
-                        Text("\(house.bedrooms)")
-                            .font(.custom("GothamSSm-Light", size: 10))
-                            .minimumScaleFactor(0.4)
-                            .foregroundColor(Color("Medium"))
-                        
-                    }
-                    HStack {
-                        Image("shower")
-                        Text("\(house.bathrooms)")
-                            .font(.custom("GothamSSm-Light", size: 10))
-                            .minimumScaleFactor(0.4)
-                            .foregroundColor(Color("Medium"))
-                    }
+        HStack {
+            Text("$\(house.price)")
+                .font(.custom("GothamSSm-Bold", size: 18))
+            Spacer()
+            HStack(alignment: .bottom) {
+                HStack {
+                    Image("bed-2")
+                    Text("\(house.bedrooms)")
+                        .font(.custom("GothamSSm-Light", size: 10))
+                        .minimumScaleFactor(0.4)
+                        .foregroundColor(Color("Medium"))
                     
-                    HStack {
-                        Image("square-measument")
-                        Text("\(house.size)")
-                            .font(.custom("GothamSSm-Light", size: 10))
-                            .minimumScaleFactor(0.4)
-                            .foregroundColor(Color("Medium"))
-                    }
-                    
-                    HStack {
-                        Image("pin")
-                        let coordinateUser = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
-                        let coordinateHouse = CLLocation(latitude: house.latitude, longitude: house.longitude)
-                        let distance = (coordinateUser.distance (from: coordinateHouse))
-                        let formatted = String(format: "%.0f", distance / 1000)
-                        Text(formatted + "km")
-                            .font(.custom("GothamSSm-Light", size: 10))
-                            .minimumScaleFactor(0.4)
-                            .lineLimit(2)
-                            .foregroundColor(Color("Medium"))
-                    }
+                }
+                HStack {
+                    Image("shower")
+                    Text("\(house.bathrooms)")
+                        .font(.custom("GothamSSm-Light", size: 10))
+                        .minimumScaleFactor(0.4)
+                        .foregroundColor(Color("Medium"))
+                }
+                
+                HStack {
+                    Image("square-measument")
+                    Text("\(house.size)")
+                        .font(.custom("GothamSSm-Light", size: 10))
+                        .minimumScaleFactor(0.4)
+                        .foregroundColor(Color("Medium"))
+                }
+                
+                HStack {
+                    Image("pin")
+                    let coordinateUser = CLLocation(latitude: locationManager.lastLocation?.coordinate.latitude ?? 0, longitude: locationManager.lastLocation?.coordinate.longitude ?? 0)
+                    let coordinateHouse = CLLocation(latitude: house.latitude, longitude: house.longitude)
+                    let distance = (coordinateUser.distance (from: coordinateHouse))
+                    let formatted = String(format: "%.0f", distance / 1000)
+                    Text(formatted + "km")
+                        .font(.custom("GothamSSm-Light", size: 10))
+                        .minimumScaleFactor(0.4)
+                        .lineLimit(2)
+                        .foregroundColor(Color("Medium"))
                 }
             }
+        }
     }
     private var descriptionSection: some View {
         //MARK: - Description
@@ -171,8 +182,8 @@ extension HouseDetailView {
     private var mapView: some View {
         //MARK: - Map
         MiniMap(house: house)
-        .cornerRadius(20)
-        .frame(height: 200)
+            .cornerRadius(20)
+            .frame(height: 200)
     }
     
     private var backButton: some View {

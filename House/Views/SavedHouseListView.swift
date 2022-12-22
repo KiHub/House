@@ -20,16 +20,19 @@ struct SavedHouseListView: View {
         NavigationView {
             List {
                 if house.count != 0 {
-                ForEach(house) { house in
-                    
-                    NavigationLink {
-                       HouseDetailViewCD(house: house)
-                    } label: {
-                       HouseRowCD(house: house)
+                    ForEach(house) { house in
+                        
+                        NavigationLink {
+                            HouseDetailViewCD(house: house)
+                        } label: {
+                            HouseRowCD(house: house)
+                        }
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color("LightGray"))
+                        .shadow(color: Color.black.opacity(0.1), radius: 4)
                     }
-                }
-                .onDelete(perform: deleteHouse)
-                .listRowSeparator(.hidden)
+                    .onDelete(perform: deleteHouse)
+                    .listRowSeparator(.hidden)
                 } else {
                     Text("Right here, you can save your favorite houses")
                         .font(.custom("GothamSSm-Light", size: 16))
@@ -40,7 +43,13 @@ struct SavedHouseListView: View {
                         .foregroundColor(Color("Medium"))
                 }
             }
+            .listStyle(.plain)
+            .background(Color("LightGray"))
             .navigationTitle("Your favourite houses")
+            .font(.custom("GothamSSm-Medium", size: 16))
+            .foregroundColor(Color("Strong"))
+            .background(.clear)
+            
         }
     }
     //MARK: - Delete

@@ -17,6 +17,7 @@
 		0B6D680E294C594C00A31D52 /* SavedHouseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D680D294C594B00A31D52 /* SavedHouseListView.swift */; };
 		0B6D6810294C5AD500A31D52 /* HouseDetailViewCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D680F294C5AD500A31D52 /* HouseDetailViewCD.swift */; };
 		0B6D6812294C5D5300A31D52 /* HouseRowCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D6811294C5D5300A31D52 /* HouseRowCD.swift */; };
+		0B6D68142953517E00A31D52 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6D68132953517D00A31D52 /* Extensions.swift */; };
 		0BFA0FF72947550700608CC6 /* HouseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA0FF62947550700608CC6 /* HouseApp.swift */; };
 		0BFA0FF92947550700608CC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA0FF82947550700608CC6 /* ContentView.swift */; };
 		0BFA0FFB2947550800608CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BFA0FFA2947550800608CC6 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		0B6D680D294C594B00A31D52 /* SavedHouseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedHouseListView.swift; sourceTree = "<group>"; };
 		0B6D680F294C5AD500A31D52 /* HouseDetailViewCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewCD.swift; sourceTree = "<group>"; };
 		0B6D6811294C5D5300A31D52 /* HouseRowCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseRowCD.swift; sourceTree = "<group>"; };
+		0B6D68132953517D00A31D52 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0BFA0FF32947550700608CC6 /* House.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = House.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BFA0FF62947550700608CC6 /* HouseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseApp.swift; sourceTree = "<group>"; };
 		0BFA0FF82947550700608CC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,12 +180,13 @@
 			isa = PBXGroup;
 			children = (
 				0BFA103229476E4100608CC6 /* HouseListView.swift */,
-				0BFA103E29485FCE00608CC6 /* HouseRow.swift */,
 				0BFA103629477A0500608CC6 /* HouseDetailView.swift */,
 				0B6D680D294C594B00A31D52 /* SavedHouseListView.swift */,
+				0BFA103E29485FCE00608CC6 /* HouseRow.swift */,
 				0B6D6811294C5D5300A31D52 /* HouseRowCD.swift */,
 				0B6D680F294C5AD500A31D52 /* HouseDetailViewCD.swift */,
 				0BFA103829477C5800608CC6 /* NoResultView.swift */,
+				0B6D6806294BD9F000A31D52 /* OnboardingView.swift */,
 				0BFA10442948FD3F00608CC6 /* AboutView.swift */,
 				0BFA10402948901800608CC6 /* TabBar.swift */,
 				0B6D67FE294BC8C600A31D52 /* Map.swift */,
@@ -198,6 +201,8 @@
 				0BFA10292947666F00608CC6 /* NetworkService.swift */,
 				0BFA102B294766D900608CC6 /* HouseFetcher.swift */,
 				0B6D680B294C545700A31D52 /* DataManager.swift */,
+				0BFA10482949D80700608CC6 /* LocationManager.swift */,
+				0B6D6804294BD9C300A31D52 /* OnboardingManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -206,13 +211,11 @@
 			isa = PBXGroup;
 			children = (
 				0BFA1027294765CE00608CC6 /* NetworkError.swift */,
+				0B6D68132953517D00A31D52 /* Extensions.swift */,
 				0B6D6808294C526900A31D52 /* Fav.xcdatamodeld */,
 				0B6D6800294BD80200A31D52 /* Global.swift */,
 				0BFA1030294769E300608CC6 /* Constants.swift */,
-				0BFA10482949D80700608CC6 /* LocationManager.swift */,
 				0B6D6802294BD89900A31D52 /* OnboardingData.swift */,
-				0B6D6804294BD9C300A31D52 /* OnboardingManager.swift */,
-				0B6D6806294BD9F000A31D52 /* OnboardingView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				0BFA0FF72947550700608CC6 /* HouseApp.swift in Sources */,
 				0BFA1026294765A700608CC6 /* NetworkServiceProtocol.swift in Sources */,
 				0B6D67FF294BC8C600A31D52 /* Map.swift in Sources */,
+				0B6D68142953517E00A31D52 /* Extensions.swift in Sources */,
 				0B6D680C294C545700A31D52 /* DataManager.swift in Sources */,
 				0BFA1031294769E300608CC6 /* Constants.swift in Sources */,
 				0B6D6801294BD80200A31D52 /* Global.swift in Sources */,

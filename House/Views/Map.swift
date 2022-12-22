@@ -18,7 +18,6 @@ struct MiniMap: View {
                 Image("point")
             }
         }
-        
     }
 }
 

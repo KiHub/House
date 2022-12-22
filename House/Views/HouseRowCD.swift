@@ -12,11 +12,15 @@ struct HouseRowCD: View {
     
     
     @StateObject var locationManager = LocationManager()
+    
+    
     let house: FetchedResults<Item>.Element
     let imageSize: CGFloat = 100
     let scale: CGFloat = 1
     
     var body: some View {
+        
+        
         HStack(alignment: .top, spacing: 20) {
             //MARK: - load and show image + options for errors
             imageSection
@@ -48,7 +52,7 @@ struct HouseRowCD: View {
                             .foregroundColor(Color("Medium"))
                     }
                     Spacer()
-
+                    
                     HStack {
                         Image("square-measument")
                         Text("\(house.size)")
@@ -64,7 +68,7 @@ struct HouseRowCD: View {
                         let coordinateHouse = CLLocation(latitude: house.latitude, longitude: house.longitude)
                         let distance = (coordinateUser.distance (from: coordinateHouse))
                         let formatted = String(format: "%.0f", distance / 1000)
-                             Text(formatted + "km")
+                        Text(formatted + "km")
                             .font(.custom("GothamSSm-Light", size: 10))
                             .minimumScaleFactor(0.4)
                             .lineLimit(2)
@@ -75,6 +79,12 @@ struct HouseRowCD: View {
                 .padding(.vertical)
             }
         }
+        .padding()
+        .background(Color("White"))
+        .cornerRadius(20)
+        
+        
+        
     }
 }
 
@@ -82,42 +92,42 @@ extension HouseRowCD {
     private var imageSection: some View {
         
         VStack {
-        if let url =  house.image {
-            AsyncImage(url: URL(string: url)) { phase in
-                if let image = phase.image {
-                    image.resizable()
-                        .scaledToFill()
-                        .frame(width: imageSize, height: imageSize)
-                        .clipShape(RoundedRectangle(cornerRadius: 20.0))
-                        .clipped()
-                        .scaleEffect(scale)
-                } else if phase.error != nil {
-                    ZStack {
-                        Color("Light").frame(width: imageSize, height: imageSize)
-                            .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                            .scaleEffect(scale)
-                        Text("❌")
-                            .font(.system(size: 70))
+            if let url =  house.image {
+                AsyncImage(url: URL(string: url)) { phase in
+                    if let image = phase.image {
+                        image.resizable()
                             .scaledToFill()
                             .frame(width: imageSize, height: imageSize)
+                            .clipShape(RoundedRectangle(cornerRadius: 20.0))
+                            .clipped()
+                            .scaleEffect(scale)
+                    } else if phase.error != nil {
+                        ZStack {
+                            Color("Light").frame(width: imageSize, height: imageSize)
+                                .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                                .scaleEffect(scale)
+                            Text("❌")
+                                .font(.system(size: 70))
+                                .scaledToFill()
+                                .frame(width: imageSize, height: imageSize)
+                        }
+                    } else {
+                        ProgressView()
+                            .frame(width: imageSize, height: imageSize)
                     }
-                } else {
-                    ProgressView()
+                }
+            } else {
+                ZStack {
+                    Color("Light").frame(width: imageSize, height: imageSize)
+                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
+                        .scaleEffect(scale)
+                    Text("🏠")
+                        .font(.system(size: 70))
+                        .scaledToFill()
                         .frame(width: imageSize, height: imageSize)
                 }
             }
-        } else {
-            ZStack {
-                Color("Light").frame(width: imageSize, height: imageSize)
-                    .clipShape(RoundedRectangle(cornerRadius: 25.0))
-                    .scaleEffect(scale)
-                Text("🏠")
-                    .font(.system(size: 70))
-                    .scaledToFill()
-                    .frame(width: imageSize, height: imageSize)
-            }
         }
-    }
     }
 }
 

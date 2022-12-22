@@ -37,28 +37,22 @@ struct HouseListView: View {
                             HouseRow(house: house)
                         }
                         .listRowSeparator(.hidden)
+                        .listRowBackground(Color("LightGray"))
+                        .shadow(color: Color.black.opacity(0.1), radius: 4)
+                        
                     }
                 } else {
                     //MARK: - No result in search
                     NoResultView()
                 }
             }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button {
-//                        print("Stop")
-//                        locationManager.stopUpdate()
-//                    } label: {
-//                        Image(systemName: "location.slash")
-//                            .scaleEffect(1)
-//                    }
-//                }
-//            }
-            .background(Color("DarkGray"))
+            .listStyle(.plain)
+           .background(Color("LightGray"))
             .searchable(text: $searchText)
             .navigationTitle("DTT REAL ESTATE")
             .font(.custom("GothamSSm-Medium", size: 16))
             .foregroundColor(Color("Strong"))
+            .background(.clear)
         }
     }
 }

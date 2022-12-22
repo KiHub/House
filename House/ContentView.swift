@@ -15,6 +15,7 @@ struct ContentView: View {
             OnboardingManager()
         } else {
             TabBar()
+                
         }
     }
 }
