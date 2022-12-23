@@ -5,12 +5,12 @@
 //  Created by  Mr.Ki on 16.12.2022.
 //
 
-
-
-
 import SwiftUI
 import CoreData
-
+/**
+ This is SavedHouseListView
+ Here I create a list of saved houses
+*/
 struct SavedHouseListView: View {
     
     @Environment(\.managedObjectContext) var  managedObjectContext

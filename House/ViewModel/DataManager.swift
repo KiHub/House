@@ -8,6 +8,8 @@
 import Foundation
 import CoreData
 
+/// Core data logic
+
 class DataManager: ObservableObject {
     let container = NSPersistentContainer(name: "Fav")
     
@@ -29,7 +31,6 @@ class DataManager: ObservableObject {
     }
     
     func addHouse(id: Int64, image: String, price: Int64, bedrooms: Int64, bathrooms: Int64, size: Int64, description: String, zip: String, city: String, latitude: Double, longitude: Double, createdDate: String, context: NSManagedObjectContext) {
-        
         let house = Item(context: context)
         house.id = id
         house.image = image
@@ -44,9 +45,6 @@ class DataManager: ObservableObject {
         house.longitude = longitude
         house.createdDate = createdDate
         house.date = Date()
-        
         save(context: context)
-        
     }
-    
 }

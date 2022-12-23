@@ -7,11 +7,9 @@
 
 import Foundation
 
-protocol Housing {
-    //
-}
+/// House model
 
-struct House: Codable, Identifiable, Housing {
+struct House: Codable, Identifiable {
    //MARK: - Data model
     
     let id: Int

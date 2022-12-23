@@ -6,7 +6,10 @@
 //
 
 import SwiftUI
-
+/**
+ This is NoResultView
+ Here I create a layout for the view which will show when no one result found for the user search
+*/
 struct NoResultView: View {
     var body: some View {
         //MARK: - If no results found

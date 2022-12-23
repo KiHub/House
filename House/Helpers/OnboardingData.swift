@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Onboarding data
+
 struct OnboardingData: Hashable, Identifiable {
     let id: Int
     let objectImage: String

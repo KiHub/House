@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// Onboarding logic
+
 struct OnboardingManager: View {
     @State private var currentTab = 0
     var body: some View {
@@ -14,7 +16,7 @@ struct OnboardingManager: View {
         TabView(selection: $currentTab,
                 content:  {
             ForEach(OnboardingData.list) { viewData in
-               
+                
                 OnboardingView(data: viewData)
                     .tag(viewData.id)
             }

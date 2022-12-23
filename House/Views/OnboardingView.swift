@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+/// This is onboarding view  
 struct OnboardingView: View {
     @ObservedObject var global = Global()
     var data: OnboardingData

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+/// This is view with some info about app
 struct AboutView: View {
     var body: some View {
         //MARK: - All about app
@@ -29,6 +29,7 @@ struct AboutView: View {
                         Text("by DTT")
                             .font(.custom("GothamSSm-Medium", size: 16))
                             .foregroundColor(Color("Strong"))
+                        // link
                         Link("d-tt.nl", destination: URL(string: "https://www.d-tt.nl/en/")!)
                         
                     }

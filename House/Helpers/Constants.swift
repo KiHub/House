@@ -8,6 +8,8 @@
 import Foundation
 import Combine
 
+/// Constants
+
 struct Constants {
     
     static let key = "98bww4ezuzfePCYFxJEWyszbUXc7dxRx"

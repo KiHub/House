@@ -8,6 +8,8 @@
 import SwiftUI
 import MapKit
 
+/// Map
+
 struct MiniMap: View {
     let house: House
     
